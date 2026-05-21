@@ -18,9 +18,9 @@ import { SEO } from "../components/seo/SEO";
 export function Home() {
   const [roleIndex, setRoleIndex] = useState(0);
   const roles = [
-    "Full Stack Developer",
-    "DevOps Engineer",
-    "Cybersecurity Enthusiast",
+    "Frontend Developer",
+    "Web Designer",
+    "Software Tester Enthusiast",
   ];
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export function Home() {
                 ref={titleReveal}
                 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl font-sans"
               >
-                Hi, I'm <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-[#00F5FF] bg-clip-text text-transparent">Thulasidharan</span>
+                Hi, I'm <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-[#00F5FF] bg-clip-text text-transparent">Muthuraj</span>
               </h1>
               
               {/* Rotating roles */}
@@ -74,7 +74,7 @@ export function Home() {
               </div>
 
               <p className="text-sm sm:text-base text-zinc-400 max-w-xl leading-relaxed">
-                I am a DevOps specialist, Full Stack Architect, and web safety auditor based in Chennai, India. I write robust type-safe code, containerize environments with Docker-pipes, and implement OWASP-grade defenses.
+                I am a Frontend Developer, Software Tester , and Web Designer based in Chennai, India. I write robust type-safe code, containerize environments with Docker-pipes, and implement OWASP-grade defenses.
               </p>
             </div>
 

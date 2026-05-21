@@ -85,7 +85,7 @@ export function Resume() {
               </Button>
               <a
                 href="/resume.pdf"
-                download="Thulasidharan_Resume.pdf"
+                download="Muthuraj_Resume.pdf"
                 className="inline-block"
               >
                 <Button variant="sparkle" size="sm" onClick={() => {

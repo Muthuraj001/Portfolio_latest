@@ -107,7 +107,7 @@ export function BlogDetails() {
                   TH
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white">Thulasidharan</h4>
+                  <h4 className="text-sm font-bold text-white">Muthuraj</h4>
                   <p className="text-[10px] text-zinc-500 font-semibold uppercase">Chennai, TN, India</p>
                 </div>
               </div>

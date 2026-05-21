@@ -1,4 +1,4 @@
-import { ShieldAlert, BookOpen, Clock, Heart, Award, Cpu, Server, Terminal, Laptop } from "lucide-react";
+import { ShieldAlert, BookOpen, Clock, Award, Cpu, Server, Laptop } from "lucide-react";
 import { Container } from "../components/layout/Container";
 import { Section } from "../components/layout/Section";
 import { PageHeader } from "../components/layout/PageHeader";
@@ -13,28 +13,28 @@ export function About() {
 
   const values = [
     {
-      title: "Clean Code Protocol",
-      desc: "Code must speak, and types must validate. I structure folders symmetrically, document parameters, and write clean interfaces that reduce tech debt.",
+      title: "Frontend Development",
+      desc: "Strong foundation in React, TypeScript, JavaScript, HTML5, and CSS3 for building responsive and user-friendly web applications.",
       icon: <Laptop className="h-5 w-5 text-emerald-400" />
     },
     {
-      title: "Secure by Design",
-      desc: "Every route is checked. HELMET protection, strict rate-limit constraints, payload sanitizations, and OWASP guides ensure data safety.",
+      title: "Software Testing",
+      desc: "Experience in identifying frontend issues, validating API responses, analyzing UI/UX problems, and supporting stable application releases.",
       icon: <ShieldAlert className="h-5 w-5 text-red-400" />
     },
     {
-      title: "Performance First",
-      desc: "No laggy frameworks. Route splits, custom lighter-animations, dynamic web asset formats, and reduced re-renders provide instantaneous loads.",
+      title: "Responsive UI Design",
+      desc: "Skilled in creating clean layouts, structured navigation, mobile-friendly interfaces, and scalable page structures.",
       icon: <Cpu className="h-5 w-5 text-yellow-400" />
     },
     {
-      title: "Automation Habit",
-      desc: "If you run it twice, script it. Fully containerized local setups and webhook-dispatched build runs save thousands of manual dev-hours.",
+      title: "API-Based Data Rendering",
+      desc: "Worked with REST API concepts and dynamic data rendering to build interactive frontend applications and dashboards.",
       icon: <Server className="h-5 w-5 text-blue-400" />
     },
     {
-      title: "Continuous Exploration",
-      desc: "Web technology moves at breakneck speeds. I dedicate weekly hours reading security updates, compiler advances, and network optimizations.",
+      title: "Continuous Learning",
+      desc: "Currently expanding skills in Full Stack Development, SharePoint Online, Microsoft Graph APIs, Python, SQL, and performance optimization.",
       icon: <BookOpen className="h-5 w-5 text-purple-400" />
     }
   ];
@@ -42,11 +42,11 @@ export function About() {
   return (
     <div>
       <SEO title="About" slug="about" />
-      
+
       {/* 1. Header Hero Page Intro */}
       <PageHeader
-        title="My Journey & Mindset"
-        subtitle="Full Stack architect, automation writer, and cybersecurity researcher specializing in container deployments and security engineering."
+        title="Frontend Developer & Software Tester"
+        subtitle="Building responsive web applications with React, TypeScript, JavaScript, and modern frontend tooling."
         category="About Me"
       />
 
@@ -56,45 +56,53 @@ export function About() {
           
           <div ref={introReveal} className="lg:col-span-7 space-y-6 text-left">
             <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              Who Is Thulasidharan?
+              Who Is Muthuraj ?
             </h2>
             <div className="h-1 w-12 bg-emerald-500 rounded" />
             
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
-              Based in beautiful Chennai, Tamil Nadu, India, I develop software at the intersection of application performance, automated configurations, and offensive framework safety. 
+              I am Muthuraj P, a Frontend Developer with strong foundations in TypeScript, JavaScript ES6+, React, HTML5, CSS3, and responsive web design. I focus on building clean, scalable, and user-friendly web applications with modular UI components.
             </p>
+
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
-              My engineering stance is defined by **integrity** and **unification**. I believe that writing a full-stack REST API of supreme speed is futile if weak sanitizations permit SQL injection attacks. Similarly, a beautiful web workspace is useless if the deployment pipeline takes 20 painful manual steps. My goal is to orchestrate secure, fully-automated deployments.
+              I have hands-on experience in software testing, debugging frontend issues, validating API responses, analyzing UI/UX problems, and improving application usability. I enjoy working closely with developers to identify issues and deliver stable, reliable applications.
             </p>
+
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
-              Outside of coding, you can find me exploring cybersecurity hacking Labs (such as PortSwigger Academy and OWASP threat models), configuring local Nginx server routes, and compiling helper Bash scripts to streamline local virtual storage configurations.
+              My technical interests include modern frontend development, REST API integration, SharePoint Online concepts, Microsoft Graph APIs, performance optimization, and full stack development. I am passionate about continuously improving my skills and building practical real-world projects.
             </p>
           </div>
 
           {/* Stats Side Cards */}
           <div className="lg:col-span-5 space-y-4">
             <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-400 text-left font-mono">
-              Empirical Benchmarks
+              Profile Highlights
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <StatCard value="30+" label="Projects Built" icon={<Award />} />
-              <StatCard value="12+" label="Docker Containers" icon={<Server />} />
-              <StatCard value="500+" label="Security Lab Hrs" icon={<Clock />} />
-              <StatCard value="100%" label="Uptime Target" icon={<Cpu />} />
+              <StatCard value="10+" label="Internships" icon={<Award />} />
+              <StatCard value="30+" label="Projects Built" icon={<Server />} />
+              <StatCard value="7.6" label="Academic Score" icon={<BookOpen />} />
+              <StatCard value="2025" label="B.E CSE Graduate" icon={<Cpu />} />
             </div>
           </div>
 
         </Container>
       </Section>
 
-      {/* 3. Mindsets & Core Values */}
+      {/* 3. Skills & Core Strengths */}
       <Section py="md" className="bg-zinc-950/60 border-t border-zinc-900">
         <Container className="space-y-12">
           
           <div className="text-center space-y-2">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#00F5FF]">Core Standards</span>
-            <h2 className="text-3xl font-extrabold text-white">How I Orchestrate Codebases</h2>
-            <p className="text-xs text-zinc-400 max-w-lg mx-auto">These benchmarks represent my daily work ethic, avoiding lazy shortcuts to build software correctly first time.</p>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#00F5FF]">
+              Core Skills
+            </span>
+            <h2 className="text-3xl font-extrabold text-white">
+              What I Bring as a Developer
+            </h2>
+            <p className="text-xs text-zinc-400 max-w-lg mx-auto">
+              A practical mix of frontend development, software testing, responsive design, API integration, and continuous technical learning.
+            </p>
           </div>
 
           <div ref={gridReveal} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">

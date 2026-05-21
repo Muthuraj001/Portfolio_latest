@@ -64,7 +64,7 @@ export function SEO({
       "@context": "https://schema.org",
       "@type": "Person",
       "name": siteConfig.name,
-      "jobTitle": "Full Stack & DevOps Engineer",
+      "jobTitle": "Frontend Developer & Software Tester",
       "worksFor": {
         "@type": "Organization",
         "name": "Freelance",
