@@ -57,7 +57,7 @@ export function Home() {
               </span>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-14">
               <h1
                 ref={titleReveal}
                 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl font-sans"

@@ -7,22 +7,33 @@ import { BlogCard } from "../components/ui/BlogCard";
 import { blogs, BlogPost } from "../data/blogs";
 import { SEO } from "../components/seo/SEO";
 
-type BlogCategoryFilter = "All" | "Security" | "DevOps" | "React" | "Auth";
+type BlogCategoryFilter = "All" | BlogPost["category"];
 
 export function Blog() {
   const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState<BlogCategoryFilter>("All");
+  const [activeCategory, setActiveCategory] =
+    useState<BlogCategoryFilter>("All");
 
-  const categories: BlogCategoryFilter[] = ["All", "Security", "DevOps", "React", "Auth"];
+  const categories: BlogCategoryFilter[] = [
+    "All",
+    "Frontend",
+    "React",
+    "Testing",
+    "Web Design",
+    "Career",
+  ];
 
-  // Filter blog posts array based on search text & active category tab
   const filteredBlogs = blogs.filter((post) => {
-    const matchesSearch =
-      post.title.toLowerCase().includes(search.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(search.toLowerCase()) ||
-      post.tags.some((t) => t.toLowerCase().includes(search.toLowerCase()));
+    const normalizedSearch = search.toLowerCase().trim();
 
-    const matchesCategory = activeCategory === "All" || post.category === activeCategory;
+    const matchesSearch =
+      normalizedSearch.length === 0 ||
+      post.title.toLowerCase().includes(normalizedSearch) ||
+      post.excerpt.toLowerCase().includes(normalizedSearch) ||
+      post.tags.some((tag) => tag.toLowerCase().includes(normalizedSearch));
+
+    const matchesCategory =
+      activeCategory === "All" || post.category === activeCategory;
 
     return matchesSearch && matchesCategory;
   });
@@ -33,42 +44,43 @@ export function Blog() {
 
       {/* 1. Header Banner */}
       <PageHeader
-        title="Technical Logbook"
-        subtitle="Detailed architectural deep-dives, DevSecOps pipelines tutorials, authenticating, and clean frontend practices."
+        title="Frontend Learning Blog"
+        subtitle="Simple articles about frontend development, React, responsive design, software testing, API validation, and portfolio building."
         category="Articles"
       />
 
       {/* 2. Blog Catalog Grid */}
       <Section py="md">
         <Container className="space-y-10">
-          
-          {/* Controls Panel: Search & Categorization tab bar */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-zinc-900 pb-6 text-left">
-            
+          {/* Controls Panel: Search & Category tabs */}
+          <div className="flex flex-col items-start justify-between gap-4 border-b border-zinc-900 pb-6 text-left md:flex-row md:items-center">
             {/* Search Input field */}
             <div className="relative w-full md:max-w-xs">
               <Search className="absolute left-3 top-2.5 h-4 w-4 text-zinc-500" />
+
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search articles, tags..."
-                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-9 py-2 text-sm text-zinc-100 placeholder-zinc-500 outline-none focus:border-emerald-500/55 transition-colors duration-250"
+                className="w-full rounded-lg border border-zinc-800 bg-zinc-950 px-9 py-2 text-sm text-zinc-100 placeholder-zinc-500 outline-none transition-colors duration-200 focus:border-emerald-500/55"
               />
             </div>
 
             {/* Filter buttons list */}
-            <div className="flex flex-wrap items-center gap-1.5 w-full md:w-auto">
+            <div className="flex w-full flex-wrap items-center gap-1.5 md:w-auto md:justify-end">
               {categories.map((cat) => {
                 const active = activeCategory === cat;
+
                 return (
                   <button
                     key={cat}
+                    type="button"
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all duration-200 outline-none ${
+                    className={`rounded-lg px-3.5 py-1.5 text-xs font-semibold tracking-wide outline-none transition-all duration-200 ${
                       active
                         ? "bg-emerald-600 font-bold text-white shadow-[0_4px_12px_rgba(16,185,129,0.15)]"
-                        : "bg-zinc-900/60 text-zinc-400 hover:text-zinc-100 hover:bg-zinc-805"
+                        : "bg-zinc-900/60 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-100"
                     }`}
                   >
                     {cat}
@@ -76,32 +88,34 @@ export function Blog() {
                 );
               })}
             </div>
-
           </div>
 
           {/* If blogs empty */}
           {filteredBlogs.length === 0 && (
-            <div className="rounded-xl border border-zinc-900 bg-zinc-950/20 p-12 text-center space-y-3">
-              <p className="text-sm text-zinc-400">No technical logs match your current search.</p>
+            <div className="space-y-3 rounded-xl border border-zinc-900 bg-zinc-950/20 p-12 text-center">
+              <p className="text-sm text-zinc-400">
+                No articles match your current search.
+              </p>
+
               <button
+                type="button"
                 onClick={() => {
                   setSearch("");
                   setActiveCategory("All");
                 }}
-                className="text-xs text-emerald-400 font-bold underline"
+                className="text-xs font-bold text-emerald-400 underline"
               >
-                Reset Filter Values
+                Reset filters
               </button>
             </div>
           )}
 
           {/* Grid Layout of blogs list */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {filteredBlogs.map((post) => (
               <BlogCard key={post.slug} post={post} />
             ))}
           </div>
-
         </Container>
       </Section>
     </div>
