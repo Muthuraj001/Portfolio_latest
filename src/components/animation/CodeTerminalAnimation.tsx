@@ -2,21 +2,24 @@ import { useEffect, useState } from "react";
 import { Terminal } from "lucide-react";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 
-// Static cybersecurity / DevOps terminal output streams (declared static outside component to avoid closure issues)
+// Resume-based frontend / testing terminal output streams
 const LOGS = [
-  "git clone thulasidharan/portfolio.git",
-  "Cloning repository... OK",
-  "npm i && npm run lint",
-  "Resolving package states... 2.1s",
-  "Running static code sanitization checks... ⚡",
-  "PASS: src/lib/security.ts - No key leakage detected.",
-  "PASS: src/auth/roles.ts - RBAC integrity secure.",
-  "docker build -t portfolio-prod:latest .",
-  "STEP 1/3: FROM node:18-alpine AS builder ... OK",
-  "STEP 2/3: RUN npm run build ... Compiled successfully",
-  "STEP 3/3: serving inside lightweight Nginx... EXPOSE 3000",
-  "Launching secure cluster on cloud ingress... OK",
-  "STATUS: DEPLOYED (Active on: https://thulasidharan.live)"
+  "git clone Muthuraj001/portfolio.git",
+  "Cloning portfolio workspace... OK",
+  "npm install",
+  "Installing React, TypeScript, and frontend tooling... OK",
+  "npm run lint",
+  "Checking TypeScript, JSX structure, and component quality... PASS",
+  "npm run test:ui",
+  "Validating responsive layouts across mobile, tablet, and desktop... PASS",
+  "Running API response validation checks...",
+  "PASS: REST API data rendering flow verified.",
+  "PASS: UI components are reusable and modular.",
+  "PASS: Navigation structure and accessibility checks completed.",
+  "npm run build",
+  "Creating optimized production build... Compiled successfully",
+  "Deploying portfolio to GitHub Pages...",
+  "STATUS: LIVE - Frontend Developer Portfolio deployed successfully"
 ];
 
 export function CodeTerminalAnimation() {
@@ -41,7 +44,7 @@ export function CodeTerminalAnimation() {
         setLines([LOGS[0]]);
         index = 1;
       }
-    }, 2500);
+    }, 2200);
 
     return () => clearInterval(interval);
   }, [prefersReduced]);
@@ -56,29 +59,63 @@ export function CodeTerminalAnimation() {
           <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
           <div className="h-3 w-3 rounded-full bg-emerald-500/80" />
         </div>
+
         <div className="flex items-center space-x-1.5 text-xs text-zinc-400 font-semibold select-none scale-90">
           <Terminal className="h-3.5 w-3.5 text-emerald-400" />
-          <span>secure_shell_session.sh</span>
+          <span>frontend_quality_check.sh</span>
         </div>
-        <div className="w-[32px]" /> {/* Spacer balance */}
+
+        <div className="w-[32px]" />
       </div>
 
       {/* Code Text Panel */}
       <div className="p-5 h-64 overflow-y-auto text-xs space-y-2 relative">
         {lines.filter(Boolean).map((ln, idx) => {
-          const isCommand = typeof ln === "string" && (ln.startsWith("git ") || ln.startsWith("npm ") || ln.startsWith("docker ") || ln.startsWith("STEP 1"));
-          const isSuccess = typeof ln === "string" && (ln.startsWith("PASS:") || ln.startsWith("STATUS:") || ln.includes("OK"));
-          
+          const isCommand =
+            typeof ln === "string" &&
+            (
+              ln.startsWith("git ") ||
+              ln.startsWith("npm ") ||
+              ln.startsWith("Deploying")
+            );
+
+          const isSuccess =
+            typeof ln === "string" &&
+            (
+              ln.startsWith("PASS:") ||
+              ln.startsWith("STATUS:") ||
+              ln.includes("OK") ||
+              ln.includes("successfully")
+            );
+
+          const isProcess =
+            typeof ln === "string" &&
+            (
+              ln.includes("Checking") ||
+              ln.includes("Validating") ||
+              ln.includes("Running") ||
+              ln.includes("Creating") ||
+              ln.includes("Installing")
+            );
+
           return (
             <div key={idx} className="flex leading-relaxed font-normal">
-              <span className="text-zinc-650 select-none mr-3 w-4 shrink-0 font-light">{idx + 1}</span>
-              <span className="text-zinc-500 mr-2 shrink-0 select-none">$</span>
+              <span className="text-zinc-650 select-none mr-3 w-4 shrink-0 font-light">
+                {idx + 1}
+              </span>
+
+              <span className="text-zinc-500 mr-2 shrink-0 select-none">
+                $
+              </span>
+
               <p
                 className={`break-all whitespace-pre-wrap ${
                   isCommand
                     ? "text-[#00F5FF] font-semibold"
                     : isSuccess
                     ? "text-emerald-400 font-medium"
+                    : isProcess
+                    ? "text-yellow-300 font-medium"
                     : "text-zinc-350"
                 }`}
               >
@@ -90,14 +127,20 @@ export function CodeTerminalAnimation() {
         
         {/* Blinking CLI pipe cursor */}
         <div className="flex leading-relaxed">
-          <span className="text-zinc-650 select-none mr-3 w-4 shrink-0 font-light">{lines.length + 1}</span>
-          <span className="text-zinc-500 mr-2 shrink-0 select-none">$</span>
+          <span className="text-zinc-650 select-none mr-3 w-4 shrink-0 font-light">
+            {lines.length + 1}
+          </span>
+
+          <span className="text-zinc-500 mr-2 shrink-0 select-none">
+            $
+          </span>
+
           <span className="inline-block h-3.5 w-1.5 bg-emerald-400 animate-pulse mt-0.5" />
         </div>
 
-        {/* Faint watermarks */}
+        {/* Faint watermark */}
         <div className="absolute right-4 bottom-4 text-[10px] text-zinc-700 font-bold uppercase select-none tracking-widest leading-none">
-          CYBER LAB v5
+          FRONTEND LAB v1
         </div>
       </div>
     </div>
