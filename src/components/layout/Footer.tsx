@@ -16,7 +16,7 @@ export function Footer() {
           <div className="space-y-4 max-w-sm">
             <Link to="/" className="flex items-center space-x-1 font-mono text-lg font-bold tracking-tight text-white outline-none">
               <span className="text-emerald-500">{"<"}</span>
-              THULASI
+              Muthu
               <span className="text-emerald-400">{" />"}</span>
             </Link>
             <p className="text-xs text-zinc-400 leading-relaxed font-normal">
@@ -90,7 +90,7 @@ export function Footer() {
 
         {/* Divider bottom line */}
         <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-zinc-500 text-left font-normal">
-          <p>© {currentYear} Thulasidharan. All Rights Reserved.</p>
+          <p>© {currentYear} Muthuraj. All Rights Reserved.</p>
           <p className="flex items-center">
             Designed & Secured with
             <span className="mx-1 text-red-500">❤</span>

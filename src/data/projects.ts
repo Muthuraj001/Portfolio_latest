@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   description: string;
   longDescription: string;
-  category: "Full Stack" | "DevOps" | "Database/Backend" | "Security" | "Mobile";
+  category: "Frontend" | "React" | "Web Design" | "Testing" | "IoT";
   techStack: string[];
   featured: boolean;
   githubUrl: string;
@@ -20,152 +20,173 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "secure-task-manager",
-    title: "Secure Task Manager",
-    description: "A full-stack task management platform with robust JWT authentication, role-based access control, secure Restful APIs, and responsive dashboard analytics.",
-    longDescription: "Secure Task Manager is designed to solve team collaboration challenges while maintaining high-grade security integrity. Many enterprise workflow tools leak data due to weak authentication and insecure direct object reference (IDOR) vulnerabilities. This project implements ironclad API security, secure cookie/tokens handling, and extensive audit logs.",
-    category: "Full Stack",
-    techStack: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "JWT", "Docker"],
+    slug: "personal-portfolio-website",
+    title: "Personal Portfolio Website",
+    description:
+      "A responsive personal portfolio website built to showcase skills, internships, projects, certifications, and contact information.",
+    longDescription:
+      "The Personal Portfolio Website is designed to present Muthuraj's frontend development journey in a clean and professional way. It highlights technical skills, internship experience, academic background, certifications, and practical projects using a modern responsive interface.",
+    category: "React",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Vite", "Responsive Design"],
     featured: true,
-    githubUrl: "https://github.com/thulasidharankvp/secure-task-manager",
-    liveUrl: "https://secure-tasks.demo-app.live",
-    problem: "Collaboration platforms are primary targets for corporate threat actors. Standard task managers suffer from weak session controls and lack granular permission checks, risking exposure of confidential organizational roadmaps.",
-    solution: "We built a multi-tenant task and workspace manager with RBAC (Role-Based Access Control), bcrypt-based password hashing, and encrypted JWT tokens. The database layers query strictly based on tenant scopes to thwart IDOR style attacks.",
+    githubUrl: "https://github.com/Muthuraj001/Portfolio_latest",
+    liveUrl: "https://muthuraj001.github.io/Portfolio_latest/",
+    problem:
+      "A resume alone does not fully show practical frontend skills, project structure, UI design ability, or real development experience.",
+    solution:
+      "Built a professional portfolio website with dedicated sections for About, Experience, Projects, Blog, and Contact to clearly showcase skills and career progress.",
     features: [
-      "Secure JSON Web Token authentication with slide-expiration cookies.",
-      "Granular role permissions (Owner, Admin, Member, Guest).",
-      "Interactive analytics dashboard with SVG widgets depicting team velocity.",
-      "Thorough API activity logs tracking all mutation requests.",
-      "Responsive layout styled with custom CSS variables."
+      "Responsive layout for mobile, tablet, and desktop screens.",
+      "Modern React component-based page structure.",
+      "Animated sections for better user engagement.",
+      "Dedicated project showcase with detailed project information.",
+      "Contact form for professional opportunities and collaboration."
     ],
-    architecture: "An Express-based MVC REST API talking to a sharded MongoDB database, consumed by a React-Vite front-end. The back-end is containerized and relies on an Nginx reverse proxy.",
-    security: "Implements strict CORS restrictions, Helmet.js header security, query sanitization inputs against NoSQL injections, and rate-limiting using express-rate-limit.",
-    performance: "Queries utilize MongoDB indexes on search text and tenant identifiers, delivering under-30ms response times. The React front-end employs memoization and lazy-loaded views to reduce bundle parsing costs.",
-    deployment: "Fully containerized using Docker Compose, deployed inside a secure VPC on AWS ECS with automated SSL renewal using Let's Encrypt.",
-    challenges: "Handling token invalidation upon password shifts. Solved by implementing a token blacklisting Redis-cache that invalidates older secret keys seamlessly."
+    architecture:
+      "Built with a Vite React frontend using reusable components, structured data files, layout components, and responsive Tailwind CSS utility classes.",
+    security:
+      "Form input validation is handled using schema-based validation to reduce invalid submissions and improve data quality.",
+    performance:
+      "Vite provides fast development builds, optimized production output, and smooth page loading with reusable lightweight components.",
+    deployment:
+      "Deployed as a static frontend portfolio using GitHub Pages.",
+    challenges:
+      "Aligning resume content with portfolio sections while keeping the UI clean, responsive, and professional."
   },
   {
-    slug: "devops-deployment-dashboard",
-    title: "DevOps Deployment Dashboard",
-    description: "A dashboard for tracking deployments, build status, multi-env cluster health, and real-time CI/CD pipeline runs and agent logs.",
-    longDescription: "The DevOps Deployment Dashboard acts as a single-pane-of-glass status board for multi-cloud deployment environments. It consolidates build workflows from GitHub Actions, GitLab CI, and AWS pipelines, offering DevOps engineers instantaneous metrics about error logs and delivery bottlenecks.",
-    category: "DevOps",
-    techStack: ["React", "TypeScript", "TailwindCSS", "Node.js", "GitHub Actions", "Docker", "Nginx"],
+    slug: "air-quality-monitoring-system",
+    title: "IoT Air Quality Monitoring System",
+    description:
+      "An IoT-based system using Arduino and MQ135 sensor to collect air quality data and display readings through a web interface.",
+    longDescription:
+      "The Air Quality Monitoring System is an IoT project designed to collect environmental air quality data using Arduino and an MQ135 sensor. The collected sensor readings are sent to a web interface where users can monitor air quality values remotely through a simple dashboard.",
+    category: "IoT",
+    techStack: ["Arduino", "MQ135 Sensor", "HTML", "CSS", "JavaScript", "Dashboard UI"],
     featured: true,
-    githubUrl: "https://github.com/thulasidharankvp/devops-dashboard",
-    liveUrl: "https://devops-dash.demo-app.live",
-    problem: "Development teams lose precious hours hopping between separate clouds and continuous integration dashboards to spot why a pipeline failed or which environment hosts a buggy tag.",
-    solution: "Constructed an Express service connecting directly to GitHub and Cloud provider hooks and APIs, returning a streamlined WebSocket-based live environment state map to a lightweight React grid.",
+    githubUrl: "https://github.com/Muthuraj001/air-quality-monitoring",
+    liveUrl: "#",
+    problem:
+      "Air quality data is difficult to understand without a simple visual interface that displays sensor readings clearly.",
+    solution:
+      "Created an IoT monitoring flow where sensor data is collected from hardware and displayed through a web-based dashboard for easier monitoring.",
     features: [
-      "Real-time pipeline progression animations matching active build logs.",
-      "Global multi-region health status mapping with visual green/yellow/red indicators.",
-      "Immediate error log aggregation surfacing failing commands right on screen.",
-      "Interactive deployment trigger widgets with confirmation gates.",
-      "Optimized responsiveness for mobile-first on-call duty engineers."
+      "Collected environmental data using Arduino and MQ135 sensor.",
+      "Displayed sensor readings on a simple web interface.",
+      "Designed dashboard-style UI for monitoring air quality values.",
+      "Supported remote viewing of collected data.",
+      "Improved understanding of IoT-to-web data flow."
     ],
-    architecture: "Vite + React UI accessing an Express back-end proxy with WebSockets. Pulls webhooks natively from repository managers and transforms payloads safely.",
-    security: "Webhook payloads undergo signature verification checks using SHA256 HMAC tokens. Access to trigger buttons is audited and tied to user profiles.",
-    performance: "React listing components optimize rendering using virtual lists for huge multi-thousand line build logs.",
-    deployment: "Deployed inside a self-managed Dockerized Nginx sandbox that manages TLS Termination efficiently.",
-    challenges: "WebSocket connections would drop or stutter during server recycles. Resolved by developing custom reconnection back-off schemes in standard React Hooks."
+    architecture:
+      "Sensor data is collected using Arduino and MQ135, then displayed through a frontend dashboard built with HTML, CSS, and JavaScript.",
+    security:
+      "Focused on safe local data handling and simple controlled display of sensor readings.",
+    performance:
+      "Lightweight frontend interface designed for quick loading and simple visualization of sensor values.",
+    deployment:
+      "Designed as an academic/project demonstration with local hardware and web interface integration.",
+    challenges:
+      "Connecting hardware sensor readings with a readable frontend dashboard and presenting data in a simple user-friendly format."
   },
   {
-    slug: "college-management-system",
-    title: "College Management System",
-    description: "A secure role-based academic portal managing students, staff schedules, mark registers, and real-time announcements.",
-    longDescription: "An academic administrative portal focusing on performance, clear relational database design, and fluid multi-role support. The College Management System streamlines course enrollment, schedule management, marks processing, and campus-wide notifications.",
-    category: "Database/Backend",
-    techStack: ["React", "TypeScript", "Node.js", "Express", "MySQL", "REST API", "Docker"],
+    slug: "tamil-cinema-website",
+    title: "Tamil Cinema Website",
+    description:
+      "A responsive entertainment website concept for displaying Tamil cinema content with clean layout and structured navigation.",
+    longDescription:
+      "The Tamil Cinema Website is a frontend web design project focused on creating a clean and engaging layout for cinema-related content. It demonstrates responsive design, visual hierarchy, navigation structure, and interactive frontend elements.",
+    category: "Web Design",
+    techStack: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI Design"],
     featured: false,
-    githubUrl: "https://github.com/thulasidharankvp/college-system",
-    liveUrl: "https://college.demo-app.live",
-    problem: "Legacy educational portals are painfully sluggish, non-responsive, and prone to SQL injection vulnerabilities and cross-site scripting (XSS) in discussion boards.",
-    solution: "Designed a clean, highly structured MySQL relational database with explicit indexes, alongside a Node.js parameterized query layer and a modern React control grid.",
+    githubUrl: "https://github.com/Muthuraj001/tamil-cinema-website",
+    liveUrl: "#",
+    problem:
+      "Entertainment websites need clean content organization, easy navigation, and responsive layouts to work well across different devices.",
+    solution:
+      "Designed a structured frontend layout with organized content sections, responsive behavior, and interactive UI elements.",
     features: [
-      "Separate dashboards tailored for Students, Professors, and System Admins.",
-      "Interactive SVG-based timetable generator and virtual attendance checkers.",
-      "Dynamic grade book with automated GPA calculation functions.",
-      "Markdown-supported notice board with immediate real-time notifications.",
-      "Printable document generator outputting official academic grade sheets."
+      "Responsive web pages for mobile and desktop screens.",
+      "Structured navigation for better content browsing.",
+      "Clean visual hierarchy for movie-related sections.",
+      "Interactive frontend elements using JavaScript.",
+      "User-friendly layout with readable content sections."
     ],
-    architecture: "Relational academic schema on MySQL, served by a structured Express routing layer utilizing Knex.js query building, with a React frontend.",
-    security: "Strict parameterized input validation avoids SQL injections completely. Sanitized academic posts avoid XSS vulnerabilities under severe load.",
-    performance: "Database queries utilize foreign key indexes and pre-compiled views to join registration sheets under 14ms.",
-    deployment: "Deployed on a virtual private server, backed up daily to cloud object storage using automated cron jobs.",
-    challenges: "Handling database locking during high-volume student enrollments. Solved by introducing Transaction isolations and database-level connection pool adjustments."
+    architecture:
+      "Built as a static frontend website using HTML, CSS, and JavaScript with separate sections for content and navigation.",
+    security:
+      "Uses static frontend pages with no sensitive data handling.",
+    performance:
+      "Optimized with simple HTML, CSS, and JavaScript for fast loading and smooth browsing.",
+    deployment:
+      "Can be deployed on GitHub Pages, Netlify, or any static hosting platform.",
+    challenges:
+      "Maintaining a clean layout while presenting multiple content sections in a responsive format."
   },
   {
-    slug: "secret-manager-lab",
-    title: "Secret Manager Lab",
-    description: "A self-hosted secure password and secret repository lab using Docker, Nginx, and customized cryptography controls.",
-    longDescription: "An in-depth self-hosted cryptographic lab demonstrating zero-knowledge architecture. Crafted to securely store and share environment secrets, API keys, and sensitive tokens without relying on external SaaS platforms.",
-    category: "Security",
-    techStack: ["Docker", "Linux", "Nginx", "Security", "DevOps", "Cryptography", "Bash"],
+    slug: "web-application-ui-development",
+    title: "Web Application UI Development",
+    description:
+      "A frontend UI development project focused on reusable components, responsive layouts, navigation flow, and API-based data display.",
+    longDescription:
+      "This project demonstrates frontend development skills through responsive UI screens, modular components, improved page navigation, and dynamic API-based data display. It reflects practical experience gained through web development and frontend-focused internship work.",
+    category: "Frontend",
+    techStack: ["HTML5", "CSS3", "JavaScript", "React", "REST API"],
     featured: true,
-    githubUrl: "https://github.com/thulasidharankvp/secret-manager-lab",
-    liveUrl: "https://secrets-lab.demo-app.live",
-    problem: "Sharing cleartext environment files in internal channels like Slack or Git leads to critical credential leakages.",
-    solution: "Built a self-hosted Secrets Vault wrapper utilizing AES-256 client-side encryption. Keys never reach the host database in plain text.",
+    githubUrl: "https://github.com/Muthuraj001/web-application-ui",
+    liveUrl: "#",
+    problem:
+      "Many web applications become difficult to maintain when UI code is not modular, responsive, or clearly structured.",
+    solution:
+      "Built reusable frontend components and structured page layouts to improve maintainability, responsiveness, and user experience.",
     features: [
-      "Zero-knowledge encryption model (encryption hashes generated on the user's browser).",
-      "Automated environment file parser encrypting individual keys automatically.",
-      "Password generator based on custom criteria (length, character groups).",
-      "Self-terminating temporary sharing links with set read counts and expiration timers.",
-      "Audit map showing geolocation of read attempts."
+      "Responsive frontend using HTML, CSS, and JavaScript.",
+      "Reusable UI components for scalable page structure.",
+      "Improved page navigation and layout consistency.",
+      "API-based data rendering for dynamic content.",
+      "Clean coding practices for better maintainability."
     ],
-    architecture: "Client-side crypto libraries handle encryption. Back-end Node.js server receives only salt parameters and ciphertexts, saving them on SQLite.",
-    security: "Fully compliant with OWASP storage principles. Prevents brute forcing by compiling PBKDF2 iterations for passwords before encryption.",
-    performance: "Lightweight single-page build size (<150KB) which operates entirely offline for encryptions.",
-    deployment: "Packaged inside a Docker Compose setup, restricted within private Linux subnets mapping TLS exclusively on port 443.",
-    challenges: "Key-derivation calculations would freeze weak mobile phones. Optimized by porting heavy cryptography logic to background Web Workers."
+    architecture:
+      "Frontend-first architecture using reusable UI components, page-level sections, and REST API data rendering concepts.",
+    security:
+      "Focused on safe frontend rendering and basic validation of displayed API data.",
+    performance:
+      "Improved loading behavior through clean code, optimized structure, and lightweight UI components.",
+    deployment:
+      "Suitable for deployment as a static frontend or React-based web application.",
+    challenges:
+      "Designing reusable UI blocks while keeping the interface simple, responsive, and easy to update."
   },
   {
-    slug: "voice-assistant-mobile-app",
-    title: "Voice Assistant Mobile App",
-    description: "A mobile voice-command interface mockup displaying responsive audio wave animations, command flowcharts, and custom assistant workflow triggers.",
-    longDescription: "A gorgeous frontend simulation for smart home and assistant flows. Translates spoken language syntax triggers into interactive UI actions, featuring fully micro-animated vector waveforms.",
-    category: "Mobile",
-    techStack: ["React Native", "TypeScript", "Mobile UI", "GSAP", "SVG", "TailwindCSS"],
+    slug: "software-testing-workflow",
+    title: "Software Testing Workflow",
+    description:
+      "A testing-focused project demonstrating frontend issue tracking, UI/UX validation, API response checks, and debugging workflow.",
+    longDescription:
+      "The Software Testing Workflow project represents hands-on testing experience with web applications. It focuses on identifying frontend issues, validating API responses, analyzing UI/UX problems, and supporting stable application releases through structured testing practices.",
+    category: "Testing",
+    techStack: ["Software Testing", "API Testing", "Debugging", "Browser DevTools", "Issue Tracking"],
     featured: false,
-    githubUrl: "https://github.com/thulasidharankvp/voice-assistant-ui",
-    liveUrl: "https://voice-assist.demo-app.live",
-    problem: "Most digital assistants feel disconnected due to laggy visual responses and opaque workflow status steps.",
-    solution: "Designed a smooth, highly responsive, tactile mobile layout matching voice states to color ripples and responsive wave controls.",
+    githubUrl: "#",
+    liveUrl: "#",
+    problem:
+      "Frontend applications can have hidden issues such as broken UI states, incorrect API responses, layout problems, and poor usability.",
+    solution:
+      "Applied structured testing practices to identify issues, validate behavior, report bugs, and collaborate with developers for improvements.",
     features: [
-      "Soundwave animation driven dynamically by microphone input peaks.",
-      "Action flowchart visualizing decision pathways in real time.",
-      "Custom macro builder stringing smart-command variables together.",
-      "Modern dark theme styled after cyberpunk and sci-fi computer interfaces."
+      "Frontend issue identification and debugging.",
+      "API response validation for web application behavior.",
+      "UI/UX problem analysis and usability suggestions.",
+      "Issue tracking and developer collaboration.",
+      "Support for stable and reliable application workflows."
     ],
-    architecture: "Modular UI architecture centering design tokens. Animations are built on GSAP and SVG filters.",
-    security: "Simulated audio captures process locally inside device storage without external outbound relays.",
-    performance: "SVG waves run on hardware-accelerated transforms, avoiding Main Thread congestion during rendering.",
-    deployment: "Built as a static web showcase using Expo Web for direct recruiting review.",
-    challenges: "Rendering fluid waves on low-end screens. Resolved by replacing continuous calculation triggers with pre-mapped cubic bezier nodes."
-  },
-  {
-    slug: "cybersecurity-learning-lab",
-    title: "Cybersecurity Learning Lab",
-    description: "A self-contained ethical hacking environment demonstrating OWASP vulnerabilities, safe exploitation, and defensive coding tutorials.",
-    longDescription: "The Cybersecurity Learning Lab is a virtual environment designed to train developers to code with a defense-first mindset. It showcases 6 interactive hacking scenarios covering SQL Injection, XSS, CSRF, IDOR, path traversal, and weak hashing, backed by step-by-step secure code repairs.",
-    category: "Security",
-    techStack: ["Linux", "Docker", "OWASP", "Security Tools", "Node.js", "Secured API"],
-    featured: true,
-    githubUrl: "https://github.com/thulasidharankvp/security-lab",
-    liveUrl: "https://security-lab.demo-app.live",
-    problem: "Traditional cyber training focuses strictly on attack behaviors without teaching developers how to restructure code to avoid vulnerabilities at the source.",
-    solution: "Created a dual-screen lab interface where users execute a mock exploit in a safe sandbox container, review the vulnerable source, and type code corrections to patch it.",
-    features: [
-      "Interactive command-line simulation executing safe proof-of-concept payloads.",
-      "Vulnerable vs. patched side-by-side code editor panels with live validation lint keys.",
-      "Interactive penetration testing checklist modeled after OWASP Top 10.",
-      "Secure credential hashes visualization demonstrating salts/pepper combinations.",
-      "Certificate of Completion generator upon resolving all vulnerabilities."
-    ],
-    architecture: "Node.js back-end running separate tiny sandboxed scopes mimicking flawed apps. UI communicates through REST APIs containing secure validation tests.",
-    security: "The app is strictly defensive-oriented and hosted isolated from actual internal networks.",
-    performance: "Static content is aggressively cached, ensuring instant loading of detailed training guides.",
-    deployment: "Deployed as single-project Docker architectures behind isolated VPS networks.",
-    challenges: "Allowing code editing while preventing users from writing malicious scripts that compromise the lab host itself. Solved using restrictive isolated sandboxed context VMs."
+    architecture:
+      "Testing workflow based on manual UI testing, API response checking, browser debugging tools, and issue tracking systems.",
+    security:
+      "Focused on identifying incorrect behavior, validation issues, and potential frontend data handling problems.",
+    performance:
+      "Helped improve user experience by identifying slow, broken, or confusing frontend behavior.",
+    deployment:
+      "Used as part of real-time web application testing and production workflow support.",
+    challenges:
+      "Understanding application workflows, reproducing issues correctly, and communicating bugs clearly to developers."
   }
 ];

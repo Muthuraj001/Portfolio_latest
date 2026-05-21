@@ -75,7 +75,7 @@ export function MobileMenu({ isOpen, onClose, routes }: MobileMenuProps) {
       <div className="flex h-20 items-center justify-between px-6 border-b border-zinc-900">
         <Link to="/" onClick={onClose} className="text-xl font-bold font-mono tracking-tight text-white group outline-none">
           <span className="text-emerald-500">{"<"}</span>
-          THULASI
+          MUTHURAJ
           <span className="text-emerald-400">{" />"}</span>
         </Link>
         <button
@@ -112,7 +112,7 @@ export function MobileMenu({ isOpen, onClose, routes }: MobileMenuProps) {
         {/* Footer info inside menu */}
         <div className="space-y-4 pt-10 text-left">
           <p className="text-xs text-zinc-500 font-medium">
-            © {new Date().getFullYear()} Thulasidharan. All Rights Reserved.
+            © {new Date().getFullYear()} Muthuraj. All Rights Reserved.
           </p>
         </div>
       </div>

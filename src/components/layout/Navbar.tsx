@@ -45,7 +45,7 @@ export function Navbar() {
           className="flex items-center space-x-1.5 font-mono text-xl font-bold tracking-tight text-white outline-none group"
         >
           <span className="text-emerald-500 transform group-hover:-translate-x-0.5 transition-transform duration-150">{"<"}</span>
-          THULASI
+          Muthu
           <span className="text-emerald-400 transform group-hover:translate-x-0.5 transition-transform duration-150">{" />"}</span>
         </Link>
 

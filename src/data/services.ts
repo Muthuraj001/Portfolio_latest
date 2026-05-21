@@ -8,107 +8,123 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: "fullstack-dev",
-    title: "Full Stack Web Application Development",
-    description: "Design and build production-grade end-to-end web architectures using React, Node.js, Express, and modern SQL or NoSQL databases.",
+    id: "frontend-development",
+    title: "Frontend Development",
+    description:
+      "Build responsive and user-friendly web pages using React, TypeScript, JavaScript, HTML5, CSS3, and modern frontend practices.",
     deliverables: [
-      "Responsive, clean UI in React & TypeScript.",
-      "Scalable Express or Fastify back-end server.",
-      "Optimized query architectures with secure transactions.",
-      "Basic admin dashboard & user login workflow.",
-      "Comprehensive test coverage & Git tracking."
+      "Responsive frontend pages for mobile, tablet, and desktop.",
+      "Reusable React components with clean structure.",
+      "TypeScript-supported UI development.",
+      "Clean page layouts with proper spacing and navigation.",
+      "Basic performance-focused frontend improvements."
     ],
-    idealClient: "SMEs & Startups wanting to transform spreadsheet records or ideas into secure cloud web portals."
+    idealClient:
+      "Startups, small businesses, and teams looking for clean frontend pages or junior frontend development support."
   },
   {
-    id: "frontend-react",
-    title: "Frontend Development with React and TypeScript",
-    description: "Refactor slow, legacy interfaces into slick, fast, responsive setups with elegant, typing-safe components.",
+    id: "react-typescript-ui",
+    title: "React & TypeScript UI Development",
+    description:
+      "Create modular React interfaces with TypeScript support, reusable components, and maintainable frontend architecture.",
     deliverables: [
-      "Rigorous type safety using latest TypeScript guidelines.",
-      "Pristine layouts styled with mobile-first Tailwind CSS.",
-      "Smooth micro-interactions powered by GSAP & Framer Motion.",
-      "Optimal code-splitting and state synchronization.",
-      "Compliance with WCAG accessibility standards."
+      "Reusable UI components such as cards, forms, buttons, and sections.",
+      "Component-based page structure.",
+      "Typed props and safer frontend code using TypeScript.",
+      "Dynamic rendering from structured data files.",
+      "Clean folder structure for easier project maintenance."
     ],
-    idealClient: "Founders seeking to launch a polished MVP that is interactive, gorgeous, and ready for VC reviews."
+    idealClient:
+      "Teams or individuals who need React-based UI screens, portfolio pages, dashboards, or frontend feature development."
   },
   {
-    id: "backend-api",
-    title: "Backend API Development",
-    description: "Formulate REST APIs or GraphQL services designed for speed, throughput, and protection against security threats.",
+    id: "responsive-web-design",
+    title: "Responsive Web Design",
+    description:
+      "Design clean and mobile-friendly website layouts with structured navigation, readable content, and improved visual hierarchy.",
     deliverables: [
-      "Fast, compliant web services using Node.js.",
-      "Automated payload filtering using schemas like Zod.",
-      "Solid authentication via JWT tokens or Session cookies.",
-      "Secure API integrations (Stripe, Twilio, Resend).",
-      "Fully documented endpoints inside Postman."
+      "Mobile-first responsive layouts.",
+      "Clean visual hierarchy for headings, sections, and cards.",
+      "Structured navigation for better user experience.",
+      "Improved spacing, alignment, and readability.",
+      "Cross-device layout testing for common screen sizes."
     ],
-    idealClient: "Mobile or web projects seeking a separate scalable server infrastructure to manage high transaction volumes."
+    idealClient:
+      "Businesses, students, creators, and professionals who need a simple, clean, and responsive website."
   },
   {
-    id: "devops-ci-cd",
-    title: "DevOps Setup and Deployment",
-    description: "Automate your release cycles. Set up CI/CD pipelines to build, test, and release code seamlessly across hosts.",
+    id: "software-testing",
+    title: "Software Testing Support",
+    description:
+      "Support web application quality by testing UI behavior, validating forms, checking API responses, and reporting frontend issues clearly.",
     deliverables: [
-      "Custom GitHub Actions or GitLab Runner pipelines.",
-      "Multi-environment stages (Dev, Staging, Prod).",
-      "Automatic notification integration (Slack/Discord webhook).",
-      "Infrastructure setup on Vercel, Netlify, or VPS nodes.",
-      "Security parameters configuration away from repo files."
+      "Manual UI testing for web pages and workflows.",
+      "Frontend issue identification and bug reporting.",
+      "Form validation and user flow testing.",
+      "API response validation using browser DevTools or testing tools.",
+      "Usability suggestions for better user experience."
     ],
-    idealClient: "Software engineering shops wanting to shift from manual drag-and-drop publishes to automated test-triggered releases."
+    idealClient:
+      "Development teams that need testing support for frontend features, web application workflows, and UI quality checks."
   },
   {
-    id: "dockerization",
-    title: "Dockerization",
-    description: "Encapsulate your runtime inside standard container services to resolve deployment inconsistencies across networks.",
+    id: "api-validation",
+    title: "API Validation & Frontend Debugging",
+    description:
+      "Check how frontend applications handle API data, loading states, error states, and dynamic content rendering.",
     deliverables: [
-      "Production-grade, secure multi-stage Dockerfiles.",
-      "Local staging orchestration using Docker Compose files.",
-      "Slightest possible runtime sizes based on alpine layers.",
-      "Security-hardened configurations using non-root service profiles.",
-      "Complete deployment integration instructions."
+      "API response checking and frontend behavior validation.",
+      "Debugging using browser DevTools Network and Console tabs.",
+      "Validation of loading, success, empty, and error UI states.",
+      "Basic REST API integration review.",
+      "Clear issue notes for developers."
     ],
-    idealClient: "Teams seeking to make system infrastructure portable and ready to run inside any cloud cluster."
+    idealClient:
+      "Frontend teams, students, and small projects that need help validating API-based UI behavior."
   },
   {
-    id: "web-portfolio",
-    title: "Portfolio & Business Website Development",
-    description: "Build custom-styled, ultra-fast online portals ensuring prospective high-paying clients choose you over standard portfolios.",
+    id: "portfolio-website",
+    title: "Portfolio Website Development",
+    description:
+      "Build a clean personal portfolio website to showcase skills, projects, internships, certifications, and contact details.",
     deliverables: [
-      "Uniquely customized styling matching your industry brand colors.",
-      "Animated reveals and entrance transitions that draw client eyes.",
-      "Clean SEO tags achieving 100/100 performance marks on Lighthouse.",
-      "Contact forms integrating serverless delivery.",
-      "Fully print-ready layouts tailored for easy file downloads."
+      "Modern personal portfolio layout.",
+      "About, Skills, Experience, Projects, and Contact sections.",
+      "Responsive design for mobile and desktop.",
+      "Project cards with clear descriptions and tech stack.",
+      "Contact form setup for professional opportunities."
     ],
-    idealClient: "Freelancers, designers, and business owners looking for a premium online showroom."
+    idealClient:
+      "Students, freshers, developers, and job seekers who want a professional online portfolio."
   },
   {
-    id: "security-review",
-    title: "Security Review for Web Applications",
-    description: "Mitigate threats. Secure your applications against OWASP Top 10 vulnerabilities like XSS, CSRF, and SQL injections.",
+    id: "web-page-improvement",
+    title: "Web Page Improvement",
+    description:
+      "Improve existing web pages by fixing layout issues, spacing problems, responsiveness, readability, and basic frontend bugs.",
     deliverables: [
-      "Systematic manual threat analysis of active code repositories.",
-      "Automated scans focusing on outdated, vulnerable packages.",
-      "Security configuration repairs for Express and React frameworks.",
-      "Security hardening reports explaining found vulnerabilities and remediation.",
-      "Best practices training for secure token storage."
+      "Layout alignment fixes.",
+      "Responsive design improvements.",
+      "Button, form, and navigation UI fixes.",
+      "CSS cleanup and component structure improvements.",
+      "Basic performance and usability improvements."
     ],
-    idealClient: "Applications preparing for audits, handling customer accounts, or transacting high-value financial payloads."
+    idealClient:
+      "Anyone with an existing website or project that needs frontend cleanup, better alignment, and improved user experience."
   },
   {
-    id: "performance-optimization",
-    title: "Performance Optimization",
-    description: "Accelerate your page loads to improve conversion metrics and Google search ranking.",
+    id: "internship-fresher-support",
+    title: "Internship & Fresher Project Support",
+    description:
+      "Assist with beginner-friendly frontend projects, academic project UI, portfolio sections, and practical web development improvements.",
     deliverables: [
-      "Interactive audit and profiling of active bundle scopes.",
-      "Comprehensive optimization of web assets, responsive SVGs, and web fonts.",
-      "Elimination of blocking network processes.",
-      "Enhanced rendering loops to avoid infinite re-renders.",
-      "Detailed analysis showing load improvements."
+      "Academic project frontend pages.",
+      "Simple dashboard or landing page UI.",
+      "Project documentation support.",
+      "Frontend code structure guidance.",
+      "Basic debugging and improvement suggestions."
     ],
-    idealClient: "Websites facing high bounce rates or failing Core Web Vitals targets."
+    idealClient:
+      "Students, freshers, and beginners who need support building or improving frontend-based academic and portfolio projects."
   }
 ];

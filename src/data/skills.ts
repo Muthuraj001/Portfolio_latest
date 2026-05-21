@@ -1,56 +1,209 @@
 export interface Skill {
   name: string;
-  category: "Frontend" | "Backend" | "Database" | "DevOps" | "Cybersecurity" | "Tools";
+  category:
+    | "Frontend"
+    | "Web Design"
+    | "Testing"
+    | "Backend Basics"
+    | "Database"
+    | "Tools"
+    | "Learning";
   percentage: number;
-  level: "Expert" | "Advanced" | "Intermediate" | "Familiar";
+  level: "Advanced" | "Intermediate" | "Familiar" | "Learning";
 }
 
 export const skills: Skill[] = [
   // Frontend
-  { name: "React", category: "Frontend", percentage: 92, level: "Expert" },
-  { name: "TypeScript", category: "Frontend", percentage: 90, level: "Expert" },
-  { name: "JavaScript", category: "Frontend", percentage: 94, level: "Expert" },
-  { name: "HTML5 & CSS3", category: "Frontend", percentage: 95, level: "Expert" },
-  { name: "TailwindCSS", category: "Frontend", percentage: 92, level: "Expert" },
-  { name: "Responsive UI/UX", category: "Frontend", percentage: 90, level: "Advanced" },
-  { name: "Web Accessibility (A11y)", category: "Frontend", percentage: 85, level: "Advanced" },
+  {
+    name: "HTML5",
+    category: "Frontend",
+    percentage: 88,
+    level: "Advanced",
+  },
+  {
+    name: "CSS3",
+    category: "Frontend",
+    percentage: 86,
+    level: "Advanced",
+  },
+  {
+    name: "JavaScript",
+    category: "Frontend",
+    percentage: 82,
+    level: "Intermediate",
+  },
+  {
+    name: "TypeScript",
+    category: "Frontend",
+    percentage: 76,
+    level: "Intermediate",
+  },
+  {
+    name: "React",
+    category: "Frontend",
+    percentage: 80,
+    level: "Intermediate",
+  },
+  {
+    name: "Responsive Design",
+    category: "Frontend",
+    percentage: 84,
+    level: "Advanced",
+  },
 
-  // Backend
-  { name: "Node.js", category: "Backend", percentage: 88, level: "Advanced" },
-  { name: "Express.js", category: "Backend", percentage: 90, level: "Advanced" },
-  { name: "REST APIs", category: "Backend", percentage: 95, level: "Expert" },
-  { name: "Session / Token Authentication", category: "Backend", percentage: 92, level: "Expert" },
-  { name: "Database Design", category: "Backend", percentage: 85, level: "Advanced" },
-  { name: "API Security Headers", category: "Backend", percentage: 88, level: "Advanced" },
+  // Web Design
+  {
+    name: "UI Layout Design",
+    category: "Web Design",
+    percentage: 82,
+    level: "Intermediate",
+  },
+  {
+    name: "Visual Hierarchy",
+    category: "Web Design",
+    percentage: 78,
+    level: "Intermediate",
+  },
+  {
+    name: "Structured Navigation",
+    category: "Web Design",
+    percentage: 80,
+    level: "Intermediate",
+  },
+  {
+    name: "Mobile-Friendly Design",
+    category: "Web Design",
+    percentage: 84,
+    level: "Advanced",
+  },
+
+  // Testing
+  {
+    name: "Software Testing",
+    category: "Testing",
+    percentage: 82,
+    level: "Intermediate",
+  },
+  {
+    name: "Frontend Bug Debugging",
+    category: "Testing",
+    percentage: 80,
+    level: "Intermediate",
+  },
+  {
+    name: "API Response Validation",
+    category: "Testing",
+    percentage: 78,
+    level: "Intermediate",
+  },
+  {
+    name: "UI/UX Issue Analysis",
+    category: "Testing",
+    percentage: 76,
+    level: "Intermediate",
+  },
+  {
+    name: "Issue Tracking Workflow",
+    category: "Testing",
+    percentage: 74,
+    level: "Familiar",
+  },
+
+  // Backend Basics
+  {
+    name: "REST API Concepts",
+    category: "Backend Basics",
+    percentage: 76,
+    level: "Intermediate",
+  },
+  {
+    name: "API-Based Data Rendering",
+    category: "Backend Basics",
+    percentage: 78,
+    level: "Intermediate",
+  },
+  {
+    name: "SharePoint Online Concepts",
+    category: "Backend Basics",
+    percentage: 62,
+    level: "Familiar",
+  },
+  {
+    name: "Microsoft Graph APIs",
+    category: "Backend Basics",
+    percentage: 58,
+    level: "Learning",
+  },
 
   // Database
-  { name: "MongoDB", category: "Database", percentage: 86, level: "Advanced" },
-  { name: "PostgreSQL", category: "Database", percentage: 80, level: "Advanced" },
-  { name: "MySQL", category: "Database", percentage: 84, level: "Advanced" },
-  { name: "Redis Basics", category: "Database", percentage: 75, level: "Intermediate" },
-
-  // DevOps
-  { name: "Docker", category: "DevOps", percentage: 88, level: "Advanced" },
-  { name: "GitHub Actions (CI/CD)", category: "DevOps", percentage: 85, level: "Advanced" },
-  { name: "Linux Administration", category: "DevOps", percentage: 90, level: "Expert" },
-  { name: "Nginx Hosting & TLS", category: "DevOps", percentage: 82, level: "Advanced" },
-  { name: "Vercel & Netlify Deployments", category: "DevOps", percentage: 95, level: "Expert" },
-  { name: "Cloud Networks (VPC/S3)", category: "DevOps", percentage: 80, level: "Advanced" },
-
-  // Cybersecurity
-  { name: "OWASP Top 10 Mitigation", category: "Cybersecurity", percentage: 86, level: "Advanced" },
-  { name: "Secure Application Coding", category: "Cybersecurity", percentage: 90, level: "Expert" },
-  { name: "HMAC / Vault / Hash Management", category: "Cybersecurity", percentage: 84, level: "Advanced" },
-  { name: "API Security & Vulnerabilities", category: "Cybersecurity", percentage: 88, level: "Advanced" },
-  { name: "Ethical Hacking Labs", category: "Cybersecurity", percentage: 82, level: "Advanced" },
-  { name: "Vulnerability Scanning Tools", category: "Cybersecurity", percentage: 80, level: "Advanced" },
-  { name: "Linux OS Security & Shell Hardening", category: "Cybersecurity", percentage: 85, level: "Advanced" },
+  {
+    name: "Basic SQL",
+    category: "Database",
+    percentage: 68,
+    level: "Familiar",
+  },
+  {
+    name: "Database Concepts",
+    category: "Database",
+    percentage: 66,
+    level: "Familiar",
+  },
 
   // Tools
-  { name: "Git & GitHub Workflow", category: "Tools", percentage: 92, level: "Expert" },
-  { name: "VS Code Core Configuration", category: "Tools", percentage: 95, level: "Expert" },
-  { name: "Postman & Rest Client", category: "Tools", percentage: 90, level: "Expert" },
-  { name: "Figma (Wireframing / Design)", category: "Tools", percentage: 75, level: "Intermediate" },
-  { name: "Bun Package Manager", category: "Tools", percentage: 88, level: "Advanced" },
-  { name: "npm / pnpm / yarn", category: "Tools", percentage: 90, level: "Expert" }
+  {
+    name: "Git",
+    category: "Tools",
+    percentage: 78,
+    level: "Intermediate",
+  },
+  {
+    name: "GitLab",
+    category: "Tools",
+    percentage: 72,
+    level: "Familiar",
+  },
+  {
+    name: "VS Code",
+    category: "Tools",
+    percentage: 88,
+    level: "Advanced",
+  },
+  {
+    name: "npm / Package Management",
+    category: "Tools",
+    percentage: 76,
+    level: "Intermediate",
+  },
+  {
+    name: "Browser DevTools",
+    category: "Tools",
+    percentage: 80,
+    level: "Intermediate",
+  },
+
+  // Learning
+  {
+    name: "Full Stack Development",
+    category: "Learning",
+    percentage: 70,
+    level: "Learning",
+  },
+  {
+    name: "Python",
+    category: "Learning",
+    percentage: 68,
+    level: "Familiar",
+  },
+  {
+    name: "Performance Optimization",
+    category: "Learning",
+    percentage: 66,
+    level: "Familiar",
+  },
+  {
+    name: "Cybersecurity Basics",
+    category: "Learning",
+    percentage: 60,
+    level: "Learning",
+  },
 ];
