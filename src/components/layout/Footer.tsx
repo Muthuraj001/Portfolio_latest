@@ -94,7 +94,7 @@ export function Footer() {
           <p className="flex items-center">
             Designed & Secured with
             <span className="mx-1 text-red-500">❤</span>
-            in Chennai, TN, India
+            in Kovipatti, TN, India
           </p>
         </div>
 
